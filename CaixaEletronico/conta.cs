@@ -50,7 +50,8 @@ namespace CaixaEletronico
 
         public bool Deposita(double valor)
         {
-            if (valor > 0)
+            // somente maior pode depositar nesse pais agora
+            if (valor > 0 && this.cliente.EhMaiordeIdade())
             {
                 this.saldo += valor;
                 return true;
